@@ -1,0 +1,278 @@
+/* Base styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #f9f9f9, #e0f7fa);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    color: #004d40;
+  }
+  
+  h1 {
+    color: #00796b;
+    margin: 30px 0 20px 0;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  }
+  
+  .filters {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    justify-content: center;
+    width: 90vw;
+    max-width: 500px;
+  }
+  
+  .filters input[type="text"] {
+    flex: 1;
+    padding: 12px 15px;
+    font-size: 16px;
+    border-radius: 12px;
+    border: 1px solid #00796b;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    transition: border-color 0.3s ease;
+  }
+  
+  .filters input[type="text"]:focus {
+    outline: none;
+    border-color: #004d40;
+    box-shadow: 0 0 8px #004d40;
+  }
+  
+  .filters select {
+    padding: 12px 15px;
+    font-size: 16px;
+    border-radius: 12px;
+    border: 1px solid #00796b;
+    background-color: white;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .filters select:hover, .filters select:focus {
+    box-shadow: 0 0 8px #004d40;
+    outline: none;
+  }
+  
+  .task-sections {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 90vw;
+    max-width: 1200px;
+    justify-content: center;
+  }
+  
+  section {
+    background: linear-gradient(145deg, #ffffff, #e0f7fa);
+    padding: 20px 25px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px #b0d9db, -5px -5px 15px #ffffff;
+    border: 1px solid #b0d9db;
+    flex: 1;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  section h2 {
+    color: #00796b;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.05);
+  }
+  
+  ul.task-manager-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 400px;
+    overflow-y: auto;
+    flex-grow: 1;
+  }
+  
+  li.task-manager-list-item {
+    background: #b2dfdb;
+    margin-bottom: 12px;
+    padding: 14px 18px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: inset 2px 2px 5px #a0cfcf, inset -2px -2px 5px #c4e3e3;
+    transition: background 0.3s ease;
+  }
+  
+  li.task-manager-list-item:hover {
+    background: #80cbc4;
+  }
+  
+  li.task-manager-list-item.completed {
+    text-decoration: line-through;
+    opacity: 0.7;
+    background: #c8e6c9;
+    box-shadow: none;
+  }
+  
+  .complete-btn {
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 7px 14px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 12px;
+    box-shadow: 2px 2px 5px #004d40;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .complete-btn:hover {
+    background-color: #004d40;
+    box-shadow: 0 0 10px #004d40;
+  }
+  
+  .delete-btn {
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 7px 14px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 12px;
+    box-shadow: 2px 2px 5px #9a0000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .delete-btn:hover {
+    background-color: #9a0000;
+    box-shadow: 0 0 10px #9a0000;
+  }
+  
+  .task-manager-input {
+    display: flex;
+    gap: 12px;
+    margin: 25px 0 50px 0;
+    width: 90vw;
+    max-width: 500px;
+  }
+  
+  .task-manager-input input[type="text"] {
+    flex: 1;
+    padding: 14px 18px;
+    font-size: 16px;
+    border-radius: 12px;
+    border: 1px solid #00796b;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    transition: border-color 0.3s ease;
+  }
+  
+  .task-manager-input input[type="text"]:focus {
+    outline: none;
+    border-color: #004d40;
+    box-shadow: 0 0 8px #004d40;
+  }
+  
+  .task-manager-input select {
+    padding: 14px 18px;
+    font-size: 16px;
+    border-radius: 12px;
+    border: 1px solid #00796b;
+    background-color: white;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .task-manager-input select:hover, .task-manager-input select:focus {
+    box-shadow: 0 0 8px #004d40;
+    outline: none;
+  }
+  
+  .task-manager-input button {
+    padding: 14px 20px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    box-shadow: 2px 2px 8px #004d40;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .task-manager-input button:hover {
+    background-color: #004d40;
+    box-shadow: 0 0 15px #004d40;
+  }
+  
+  #auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .auth-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px #b0d9db, -5px -5px 15px #ffffff;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .auth-box h2 {
+    color: #00796b;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+  
+  .auth-box input {
+    width: 100%;
+    padding: 14px 18px;
+    margin-bottom: 15px;
+    border: 1px solid #00796b;
+    border-radius: 12px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    transition: border-color 0.3s ease;
+  }
+  
+  .auth-box input:focus {
+    outline: none;
+    border-color: #004d40;
+    box-shadow: 0 0 8px #004d40;
+  }
+  
+  .auth-box button {
+    width: 100%;
+    padding: 14px 18px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 16px;
+    box-shadow: 2px 2px 8px #004d40;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .auth-box button:hover {
+    background-color: #004d40;
+    box-shadow: 0 0 15px #004d40;
+  }
+  
+  #toggleText {
+    margin-top: 15px;
+    font-size: 14px;
+  }
