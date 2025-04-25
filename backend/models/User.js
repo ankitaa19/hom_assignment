@@ -5,6 +5,6 @@ const UserSchema = new mongoose.Schema({
   password: { type: String, required: true }
 });
 
-// No direct tasks array here, tasks are linked via Task model
+
 
 module.exports = mongoose.model('User', UserSchema);

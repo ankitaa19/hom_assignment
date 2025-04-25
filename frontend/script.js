@@ -7,19 +7,34 @@ document.addEventListener('DOMContentLoaded', function () {
   const searchInput = document.getElementById('searchInput');
   const priorityFilter = document.getElementById('priorityFilter');
   const statusFilter = document.getElementById('statusFilter');
+  const logoutBtn = document.getElementById('logoutBtn');
 
   let tasks = [];
 
   // Load userId from localStorage on page load
   userId = localStorage.getItem('userId');
+  console.log('Loaded userId from localStorage:', userId);
   if (userId) {
+    console.log('User is logged in, showing app and hiding auth');
     document.getElementById('auth').style.display = 'none';
     document.getElementById('app').style.display = 'block';
+    logoutBtn.style.display = 'inline-block';
     fetchTasks();
   } else {
+    console.log('No userId found, showing auth and hiding app');
     document.getElementById('auth').style.display = 'block';
     document.getElementById('app').style.display = 'none';
+    logoutBtn.style.display = 'none'; // Hide logout button
   }
+
+  // Logout button click handler
+  logoutBtn.addEventListener('click', () => {
+    localStorage.removeItem('userId');
+    userId = null;
+    document.getElementById('auth').style.display = 'block';
+    document.getElementById('app').style.display = 'none';
+    logoutBtn.style.display = 'none';
+  });
 
   async function fetchTasks() {
     if (!userId) return;
@@ -112,13 +127,13 @@ document.addEventListener('DOMContentLoaded', function () {
       alert(data.message);
 
       if (isLogin) {
-        loggedInUserId = data.userId; // Assuming backend returns userId on login
-        localStorage.setItem('userId', loggedInUserId); // Persist userId in localStorage
+        loggedInUserId = data.userId; 
+        localStorage.setItem('userId', loggedInUserId); 
         document.getElementById('auth').style.display = 'none';
         document.getElementById('app').style.display = 'block';
         window.setUserId(loggedInUserId);
       } else {
-        toggleForm(); // switch to login after successful registration
+        toggleForm(); 
       }
     } catch (err) {
       alert(err.message);
@@ -240,7 +255,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   renderTasks();
 
-  // Expose function to set userId after login
+  
   window.setUserId = function (id) {
     userId = id;
     fetchTasks();
@@ -286,13 +301,13 @@ async function handleAuth() {
     alert(data.message);
 
     if (isLogin) {
-      loggedInUserId = data.userId; // Assuming backend returns userId on login
-      localStorage.setItem('userId', loggedInUserId); // Persist userId in localStorage
+      loggedInUserId = data.userId; 
+      localStorage.setItem('userId', loggedInUserId); 
       document.getElementById('auth').style.display = 'none';
       document.getElementById('app').style.display = 'block';
       window.setUserId(loggedInUserId);
     } else {
-      toggleForm(); // switch to login after successful registration
+      toggleForm(); 
     }
   } catch (err) {
     alert(err.message);

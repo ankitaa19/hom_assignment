@@ -17,48 +17,50 @@
     </div>
   </div>
 
-  <h1>Task Manager</h1>
+  <div id="app">
+    <h1>Task Manager</h1>
 
-  <div class="filters">
-    <input type="text" id="searchInput" placeholder="Search tasks..." oninput="filterTasks()" />
-    <select id="priorityFilter" onchange="filterTasks()">
-      <option value="all">All Priorities</option>
-      <option value="high">High Priority</option>
-    </select>
-    <select id="statusFilter" onchange="filterTasks()">
-      <option value="all">All Status</option>
-      <option value="pending">Pending</option>
-      <option value="completed">Completed</option>
-      <option value="high">High Priority</option>
-    </select>
-  </div>
+    <div class="filters">
+      <input type="text" id="searchInput" placeholder="Search tasks..." oninput="filterTasks()" />
+      <select id="priorityFilter" onchange="filterTasks()">
+        <option value="all">All Priorities</option>
+        <option value="high">High Priority</option>
+      </select>
+      <select id="statusFilter" onchange="filterTasks()">
+        <option value="all">All Status</option>
+        <option value="pending">Pending</option>
+        <option value="completed">Completed</option>
+        <option value="high">High Priority</option>
+      </select>
+    </div>
 
-  <div class="task-sections">
-    <section id="highPriorityTasks">
-      <h2>High Priority Tasks</h2>
-      <ul id="highPriorityList" class="task-manager-list"></ul>
-    </section>
+    <div class="task-sections">
+      <section id="highPriorityTasks">
+        <h2>High Priority Tasks</h2>
+        <ul id="highPriorityList" class="task-manager-list"></ul>
+      </section>
 
-    <section id="pendingTasks">
-      <h2>Pending Tasks</h2>
-      <ul id="pendingList" class="task-manager-list"></ul>
-    </section>
+      <section id="pendingTasks">
+        <h2>Pending Tasks</h2>
+        <ul id="pendingList" class="task-manager-list"></ul>
+      </section>
 
-    <section id="completedTasks">
-      <h2>Completed Tasks</h2>
-      <ul id="completedList" class="task-manager-list"></ul>
-    </section>
-  </div>
+      <section id="completedTasks">
+        <h2>Completed Tasks</h2>
+        <ul id="completedList" class="task-manager-list"></ul>
+      </section>
+    </div>
 
-  <div class="task-manager-input">
-    <input type="text" id="taskInput" placeholder="Add a new task..." />
+    <div class="task-manager-input">
+      <input type="text" id="taskInput" placeholder="Add a new task..." />
     <select id="priorityInput">
-      <option value="normal">Normal Priority</option>
+      <option value="low">Normal Priority</option>
       <option value="high">High Priority</option>
     </select>
-    <button onclick="addTask()">Add</button>
+      <button onclick="addTask()">Add</button>
+    </div>
+    <button id="logoutBtn" style="display:none;">Logout</button>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
